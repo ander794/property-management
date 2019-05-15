@@ -1,0 +1,11 @@
+com/ander/cloud/propertymanagement/AppSecurityConfig.class
+com/ander/cloud/propertymanagement/Application.class
+com/ander/cloud/propertymanagement/property/PropertyController.class
+com/ander/cloud/propertymanagement/authentication/RegistrationController.class
+com/ander/cloud/propertymanagement/authentication/User.class
+com/ander/cloud/propertymanagement/property/Property.class
+com/ander/cloud/propertymanagement/authentication/UserRepository.class
+com/ander/cloud/propertymanagement/ApplicationConfiguration.class
+com/ander/cloud/propertymanagement/authentication/RoleRepository.class
+com/ander/cloud/propertymanagement/authentication/Role.class
+com/ander/cloud/propertymanagement/property/PropertyRepository.class

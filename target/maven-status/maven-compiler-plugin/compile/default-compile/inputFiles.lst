@@ -1,0 +1,11 @@
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/ApplicationConfiguration.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/authentication/RoleRepository.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/authentication/UserRepository.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/property/PropertyRepository.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/authentication/Role.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/authentication/User.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/AppSecurityConfig.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/Application.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/property/PropertyController.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/authentication/RegistrationController.java
+/Users/i337073/Desktop/Applications/Java/property-management/src/main/java/com/ander/cloud/propertymanagement/property/Property.java
