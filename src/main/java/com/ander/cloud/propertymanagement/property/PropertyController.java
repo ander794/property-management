@@ -28,15 +28,17 @@ public class PropertyController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
-	public String addNewProperty(@Valid @RequestBody Property requestBody) {
+	public Property addNewProperty(@Valid @RequestBody Property requestBody) {
 		Property property = (Property) requestBody;
+		property.setId(null);
 		propertyRepository.save(property);
-		return "Saved";
+		return property;
 	}
 
 	@GetMapping("/{id}")
 	public Property getProperty(@PathVariable("id") Long id) {
-		Property property = propertyRepository.findById(id).get();
+		Property property = propertyRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Property is not found with id " + id));
 		return property;
 	}
 
@@ -51,10 +53,7 @@ public class PropertyController {
 			property.setAddress(newProperty.getAddress());
 			property.setPrice(newProperty.getPrice());
 			return propertyRepository.save(property);
-		}).orElseGet(() -> {
-			newProperty.setId(id);
-			return propertyRepository.save(newProperty);
-		});
+		}).orElseThrow(() -> new ResourceNotFoundException("Property is not found with id " + id));
 	}
 
 	@DeleteMapping("/{id}")

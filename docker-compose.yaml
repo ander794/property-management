@@ -1,22 +1,31 @@
 version: '3'
 
 services:
-  mysql-container:
-    image: mysql:latest
-    container_name: mysql-docker-container
-    environment: 
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=property_management_db
-      - MYSQL_USER=db_tech_user
-      - MYSQL_PASSWORD=Initial1
+  postgresql-container:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    container_name: postgresql-docker-container
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=property_management_db
     #restart: always
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    ports:
+    - 27017:27017
+    command: --smallfiles
   property-management-container:
+    build: .
     container_name: property-management-container
     image: property-management-image:latest
     #restart: always
     ports:
       - 8080:8080
     depends_on:
-      - mysql-container
+      - postgresql-container
+      - mongodb
 
     

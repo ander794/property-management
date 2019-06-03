@@ -60,6 +60,10 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 				.usersByUsernameQuery(usersQuery)
 				.authoritiesByUsernameQuery(authoritiesByUsernameQuery)
 				.passwordEncoder(passwordEncoder());
+//		auth
+//			.inMemoryAuthentication()
+//			.withUser("Demo")
+//			.password("Demo");
 	}
 
 	@Bean

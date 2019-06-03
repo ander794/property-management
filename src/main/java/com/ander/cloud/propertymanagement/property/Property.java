@@ -14,23 +14,23 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.ander.cloud.propertymanagement.BaseEntity;
+import com.ander.cloud.propertymanagement.authentication.User;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 
 @Entity
 @NamedQuery(name = "Property.findAllPropertyByAddress", query = "Select p from Property p where p.address = :address")
-@EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = { "createdAt", "updatedAt" }, allowGetters = true)
-public class Property {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
+public class Property extends BaseEntity{
 	@NotBlank(message = "Address is mandatory")
 	private String address;
 
@@ -40,24 +40,6 @@ public class Property {
 	private Date acquisitionDate;
 
 	private String photoUrl;
-
-	@Column(nullable = false, updatable = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	@CreatedDate
-	private Date createdAt;
-
-	@Column(nullable = true)
-	@Temporal(TemporalType.TIMESTAMP)
-	@LastModifiedDate
-	private Date updatedAt;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getAddress() {
 		return address;
@@ -89,22 +71,6 @@ public class Property {
 
 	public void setPhotoUrl(String photoUrl) {
 		this.photoUrl = photoUrl;
-	}
-
-	private Date getCreatedAt() {
-		return createdAt;
-	}
-
-	private void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	private Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	private void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
 	}
 
 }

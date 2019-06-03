@@ -44,7 +44,7 @@ public class RegistrationController {
 		user.setPassword(passwordEncoder.encode(password));
 		
 		Role userRole = roleRepository.findRoleByName("USER");
-		user.setRoles(Arrays.asList(userRole));
+		//user.setRoles(Arrays.asList(userRole));
 		
 		User u = userRepository.save(user);
 		return u;
